@@ -7,6 +7,8 @@ import { TopNavBarComponent } from './Navigation/top-nav-bar/top-nav-bar.compone
 import { PetLayoutComponent } from './Layouts/pet-layout/pet-layout.component';
 import { ShopLayoutComponent } from './Layouts/shop-layout/shop-layout.component';
 import { SocialComponent } from './Layouts/social/social.component';
+import { ShopCardComponent } from './ShopComps/shop-card/shop-card.component';
+import { PetCreatorComponent } from './Layouts/pet-creator/pet-creator.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { SocialComponent } from './Layouts/social/social.component';
     TopNavBarComponent,
     PetLayoutComponent,
     ShopLayoutComponent,
-    SocialComponent
+    SocialComponent,
+    ShopCardComponent,
+    PetCreatorComponent
   ],
   imports: [
     BrowserModule,
