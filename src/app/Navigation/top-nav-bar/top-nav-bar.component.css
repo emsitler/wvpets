@@ -1,5 +1,8 @@
 .bg-purble{
-    background-color:rgb(27, 0, 53)
+    background-image: url("https://dodo.ac/np/images/5/54/Lunar_Horizon_PG_Texture.png");
+    background-repeat: repeat;
+    background-size: 10%;
+    background-position: center center;
 }
 .userCard img{
     width: 100%;

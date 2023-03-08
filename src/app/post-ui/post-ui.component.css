@@ -1,0 +1,11 @@
+.col-small{
+    width:60px;
+}
+.col-small img {
+    height: 50px;
+    width: 50px;
+  }
+  .col-3 img{
+    height: 150px;
+    width:150px;
+  }

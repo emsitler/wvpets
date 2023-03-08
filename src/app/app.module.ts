@@ -9,6 +9,7 @@ import { ShopLayoutComponent } from './Layouts/shop-layout/shop-layout.component
 import { SocialComponent } from './Layouts/social/social.component';
 import { ShopCardComponent } from './ShopComps/shop-card/shop-card.component';
 import { PetCreatorComponent } from './Layouts/pet-creator/pet-creator.component';
+import { PostUIComponent } from './post-ui/post-ui.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PetCreatorComponent } from './Layouts/pet-creator/pet-creator.component
     ShopLayoutComponent,
     SocialComponent,
     ShopCardComponent,
-    PetCreatorComponent
+    PetCreatorComponent,
+    PostUIComponent
   ],
   imports: [
     BrowserModule,
