@@ -2,22 +2,21 @@
   <h2 class="text-center text-dark">Shop</h2>
     <div class="container">
         <div class="row">
-          <div class="col" style="margin-top: 20px;">
-            <app-shop-card></app-shop-card>
-            <app-shop-card></app-shop-card> <!--Replace with ngFor, make mocklist with different hat data-->
-            <app-shop-card></app-shop-card>
-            <app-shop-card></app-shop-card>
-            <div class="container" style="height:20px"></div>
-            <app-shop-card></app-shop-card>
-            <app-shop-card></app-shop-card>
-            <app-shop-card></app-shop-card>
-            <app-shop-card></app-shop-card>
-
-          </div>
+            <div class="col" style="margin-top: 20px; width:230px">
+              <div class="container-fluid d-flex" style= "justify-content:space-evenly;">
+                <div class="row row-cols-4">
+                    <div *ngFor="let item of hatCards">
+                        <div class="col" style="width:230px">
+                          <app-shop-card  img={{item.img}} name={{item.name}} description={{item.description}}></app-shop-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
           <div class="col-3 text-center">
             <img src="https://i.imgur.com/8HTgOzr.png" alt="shopkeep">
           </div>
         </div>
     </div>
-    <div class="container" style="height: 50px"></div>
+    <div class="container" style="height: 250px"></div>
 </body>

@@ -4,3 +4,9 @@ body {
     background-size: cover;
     background-position: center center;
   }
+.petBlock{
+  background-color: rgb(62, 62, 62);
+  border-radius: 10px;
+  width:550px;
+  height: 650px;
+}

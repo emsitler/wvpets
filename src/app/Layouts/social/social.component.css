@@ -1,0 +1,7 @@
+.body{
+    position: relative;
+    background-image: url(https://animal-crossing.com/assets/img/patterns/play-dots.png);
+    background-color: #fdfdea;
+    background-size: 32px 32px;
+    z-index: 50;
+}
