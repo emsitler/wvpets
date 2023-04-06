@@ -10,6 +10,12 @@ import { SocialComponent } from './Layouts/social/social.component';
 import { ShopCardComponent } from './ShopComps/shop-card/shop-card.component';
 import { PetCreatorComponent } from './Layouts/pet-creator/pet-creator.component';
 import { PostUIComponent } from './post-ui/post-ui.component';
+import { LoginPageComponent } from './Layouts/login-page/login-page.component';
+import { NewAccountPageComponent } from './Layouts/new-account-page/new-account-page.component';
+
+import{ AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,11 +26,15 @@ import { PostUIComponent } from './post-ui/post-ui.component';
     SocialComponent,
     ShopCardComponent,
     PetCreatorComponent,
-    PostUIComponent
+    PostUIComponent,
+    LoginPageComponent,
+    NewAccountPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

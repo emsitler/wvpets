@@ -1,0 +1,12 @@
+.formBlock{
+    padding-top: 20px;
+    background-color: rgb(210, 210, 210);
+    border-radius: 10px;
+    width:60%;
+}
+.bg-blue{
+    background-image: url("https://i.pinimg.com/originals/4c/b9/ce/4cb9cee09c182385c16fc51c9e029a91.jpg");
+    background-size: 50%;
+    height: 38.5rem;
+    padding-top: 20px;
+}

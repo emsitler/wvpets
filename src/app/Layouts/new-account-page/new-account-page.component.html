@@ -1,0 +1,31 @@
+    <div class="bg-blue">
+        <div class="container-fluid formBlock">
+            <form>
+                <div class="mb-3">
+                    <h4 class="text-dark">Create a New Account</h4>
+                </div>
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                <input type="email" class="form-control" name="email" [(ngModel)]="email"/>
+                <label class="form-label" for="form2Example1">Email address</label>
+                </div>
+            
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                <input type="password" class="form-control" name="password" [(ngModel)]="password"/>
+                <label class="form-label" for="form2Example2">Password</label>
+                </div>
+            
+                <!-- 2 column grid layout for inline styling -->
+            
+                <!-- Submit button -->
+                <div class="text-center">
+                    <button type="button" class="btn btn-success btn-block mb-4" (click)="register()">Create Account</button>
+                </div>
+                <div class="text-center"><p>Or</p></div>
+                <div class="text-center">
+                    <button type="button" class="btn btn-outline-secondary bg-white btn-block mb-4" routerLink="">Return to Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
