@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "wvpets:build:production",
+            "firebaseProject": "wvpets-71a12",
+            "firebaseHostingSite": "wvpets-71a12"
+          }
         }
       }
     }

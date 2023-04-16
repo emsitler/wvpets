@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./top-nav-bar.component.css']
 })
 export class TopNavBarComponent {
-
+  usr = localStorage.getItem('uid')
 }

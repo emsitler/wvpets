@@ -3,6 +3,8 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { PetService } from 'src/app/Services/pet.service';
 import { HttpClient } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pet-layout',
@@ -13,16 +15,28 @@ export class PetLayoutComponent implements OnInit {
   petName: string = 'tiddlywinks';
   petImg: string = '';
   petSpecies: string ='';
-  
+  foodNum: number = 0;
+  money: number = 0;
 
-  constructor(private auth : AuthService, private pet: PetService, private http:HttpClient) {
+  constructor(private auth : AuthService, private pet: PetService, private http:HttpClient, private db:AngularFireDatabase) {
   }
   async ngOnInit(): Promise<void> {
+    let petNum:number;
     this.pet.getPetName().subscribe(data => {
       this.petName = <string>data;
     })
-    this.petImg = await this.pet.getPetType();
-    this.petSpecies = await this.pet.getPetSpecies();
+    this.pet.getPetNum().subscribe(data =>{
+      petNum = parseInt(data);
+      this.petSpecies = this.pet.getPetSpecies(petNum);
+      this.petImg = this.pet.getPetType(petNum);
+    }) //pet type is completely fucking irrepareably broken. im going crazy. why cant it just wait 8 picoseconds until it moves on. FUCK YOUUUUUUU
+
+    this.http.get("https://wvpets-71a12-default-rtdb.firebaseio.com/users/" +localStorage.getItem('uid')+ "/foodNum.json").pipe(map(response => response as number)).subscribe(data =>{
+      this.foodNum = <number>data;
+    });
+    this.http.get("https://wvpets-71a12-default-rtdb.firebaseio.com/users/" +localStorage.getItem('uid')+ "/money.json").pipe(map(response => response as number)).subscribe(data =>{
+      this.money = <number>data;
+    });
   }
 
   logout(){

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "wvpets-71a12": {
+      "hosting": {
+        "wvpets": [
+          "wvpets-71a12"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "wvpets-71a12"
+  }
+}

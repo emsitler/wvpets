@@ -15,9 +15,11 @@ import { NewAccountPageComponent } from './Layouts/new-account-page/new-account-
 
 import{ AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment'; 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HttpClientModule } from '@angular/common/http';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 
 
@@ -39,8 +41,11 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
+    ReactiveFormsModule,
     AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideDatabase(() => getDatabase())
   ],
   providers: [],
   bootstrap: [AppComponent]

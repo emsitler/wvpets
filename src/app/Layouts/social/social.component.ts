@@ -12,7 +12,10 @@ export class SocialComponent {
   constructor(private pet: PetService) {
   }
 async ngOnInit(): Promise<void> {
-    this.petImg = await this.pet.getPetType();
+  this.pet.getPetNum().subscribe(data =>{
+    let petNum = parseInt(data);
+    this.petImg = this.pet.getPetType(petNum);
+  })
   }
 
 

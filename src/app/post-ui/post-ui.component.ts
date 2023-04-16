@@ -14,7 +14,11 @@ export class PostUIComponent {
   pfp = "https://avatars.githubusercontent.com/u/122303078?s=96&v=4"
   petImg = ''
   async ngOnInit(): Promise<void>{
-    this.petImg = await this.pet.getPetType();
+    this.pet.getPetNum().subscribe(data =>{
+      let petNum = parseInt(data);
+      this.petImg = this.pet.getPetType(petNum);
+    })
+
   }
   
 }

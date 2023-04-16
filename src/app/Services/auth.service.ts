@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { newUser } from '../Classes/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   private baseUrl: string = "https://wvpets-71a12-default-rtdb.firebaseio.com/users";
   userID : string | null = null;
-  constructor(private fireauth : AngularFireAuth, private router : Router, private http:HttpClient) { }
+  constructor(private fireauth : AngularFireAuth, private router : Router, private http:HttpClient, private db:AngularFireDatabase) { }
 
   //login method
   login(email: string, password: string) {
@@ -19,7 +21,7 @@ export class AuthService {
         this.fireauth.currentUser.then(data => {
           if(data != null){
             console.log(data.uid)
-            localStorage.setItem('uid', data.uid)
+            localStorage.setItem('uid', email.substring(0, email.indexOf("@")))
             console.log(localStorage)
           }
         })
@@ -36,7 +38,8 @@ export class AuthService {
   register(email: string, password: string) {
     this.fireauth.createUserWithEmailAndPassword(email, password).then(
       () => {
-        this.http.put(this.baseUrl + '.json', "{poop}")
+        let justUser = email.substring(0, email.indexOf("@"));
+        this.db.object('/users/' + justUser).set(new newUser(email));
         alert("Your account has been successfuly created. Now just log in!")
         this.router.navigate(['']);
       },
@@ -51,7 +54,7 @@ export class AuthService {
   logout() {
     this.fireauth.signOut().then(
       () => {
-        localStorage.removeItem('token');
+        localStorage.clear;
         this.router.navigate(['']);
       },
       e => {

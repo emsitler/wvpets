@@ -1,19 +1,26 @@
-
-<div class="container-fluid bg-black">
-<p class="text-white">pet-creator works!</p>
-<form id="pet-form">
-    <label class="text-white" for="name">Pet Name:</label>
-    <input type="text" id="name" name="name" required>
-  
-    <label class="text-white" for="type">Pet Type:</label>
-    <select id="type" name="type" required>
-      <option value="">Select a pet type</option>
-      <option value="1">Raccoon</option>
-      <option value="2">Bear</option>
-      <option value="3">Blue Jay</option>
-      <option value="4">Bobcat</option>
+<div class="container mooch text-center" style="margin-top:40px;">
+  <form (ngSubmit)="onSubmit()">
+    <label for="petName">Pet Name:</label>
+    <input id="petName" name="petName" type="text" [(ngModel)]="petName" />
+  <div class="spacer">
+    <label for="petType">Pet Type:</label>
+    <select id="petType" name="petType" [(ngModel)]="petType">
+      <option value=0>Bear</option>
+      <option value=1>Raccoon</option>
+      <option value=2>Bird</option>
+      <option value=3>Trout</option>
     </select>
-    <button type="submit">Create Pet</button>
+  </div>
+  <div class="spacer">
+    <button type="submit" >Preview Beast</button>
+  </div>
   </form>
-  <div class="container" style="height:800px"></div>
+  <div class="spacer"></div>
+  <h1 *ngIf="previewImg !== ''">{{petName}} the {{tempPetSpecies}}</h1>
+  <div class="spacer">
+    <img src={{previewImg}} style="height:400px">
+  </div>
+  <div class="spacer"></div>
+  <div class="spacer"></div>
+  <button *ngIf="previewImg !== ''" type="button" class="btn btn-info" (click)="submitForReals()">Finish Pet</button>
 </div>
