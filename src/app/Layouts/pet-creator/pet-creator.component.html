@@ -1,4 +1,5 @@
 <div class="container mooch text-center" style="margin-top:40px;">
+  <h2>Create Your Pet!</h2>
   <form (ngSubmit)="onSubmit()">
     <label for="petName">Pet Name:</label>
     <input id="petName" name="petName" type="text" [(ngModel)]="petName" />
@@ -7,12 +8,12 @@
     <select id="petType" name="petType" [(ngModel)]="petType">
       <option value=0>Bear</option>
       <option value=1>Raccoon</option>
-      <option value=2>Bird</option>
+      <option value=2>Cardinal</option>
       <option value=3>Trout</option>
     </select>
   </div>
   <div class="spacer">
-    <button type="submit" >Preview Beast</button>
+    <button type="submit" >Preview Your Choices</button>
   </div>
   </form>
   <div class="spacer"></div>

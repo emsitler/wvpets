@@ -7,7 +7,7 @@
                 <div class="row row-cols-4">
                     <div *ngFor="let item of hatCards">
                         <div class="col" style="width:230px">
-                          <app-shop-card  img={{item.img}} name={{item.name}} description={{item.description}}></app-shop-card>
+                          <app-shop-card id={{item.id}} img={{item.img}} name={{item.name}} description={{item.description}}></app-shop-card>
                         </div>
                     </div>
                 </div>
@@ -15,6 +15,8 @@
             </div>
           <div class="col-3 text-center">
             <img src="https://i.imgur.com/8HTgOzr.png" alt="shopkeep">
+            <button type="button" class="btn btn-info" (click)="noHat()">Remove Hat</button>
+            <button type="button" class="btn btn-warning" (click)="creator()">Remake Pet</button>
           </div>
         </div>
     </div>

@@ -4,10 +4,12 @@ export class shopCard{
     img = "";
     name = "";
     description = "";
+    id = "";
 
-    constructor(img, name, description){
+    constructor(img, name, description, id){
         this.img = img;
         this.name = name;
         this.description = description;
+        this.id = id;
     }
 }

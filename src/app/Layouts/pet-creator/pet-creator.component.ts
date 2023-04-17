@@ -46,6 +46,7 @@ export class PetCreatorComponent {
       }
       this.db.object("users/" + localStorage.getItem('uid') + "/petName").set(this.petName);
       this.db.object("users/" + localStorage.getItem('uid') + "/petType").set(this.petType);
+      this.db.object("users/" + localStorage.getItem('uid') + "/currentHat").set(-1);
       alert("Pet Successfully Created! Get out there champ!")
       this.router.navigate(['/home']);
       return;

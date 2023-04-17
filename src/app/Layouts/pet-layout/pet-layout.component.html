@@ -1,8 +1,10 @@
+
 <body>
     <div class="container-fluid text-white" style="text-align: end;">
         <div class="container">
             <h3>Food: {{foodNum}}</h3>
             <h3>Money: {{money}}</h3>
+            <h3>current hat num: {{currentHat}}</h3>
             <button type="button" class="btn btn-info text-center" (click)="logout()">Log Out</button>
         </div>
     </div>
@@ -10,7 +12,8 @@
         <header class="text-white">Your pet:</header>
         <h1 class="text-white">{{petName}} the {{petSpecies}}</h1>
         <div class="container" style="height:50px"></div>
-        <img src={{petImg}} alt="loading..." style="height:400px;">
+        <img *ngIf="currentHat !== -1" src={{hatImg}} style="height:100px">
+        <img class ="petimage" src={{petImg}} alt="loading...">
         <div class="container" style="height: 20px"></div>
         <button type="button" class="btn btn-success" (click)="feed()">Feed</button>
     </div>

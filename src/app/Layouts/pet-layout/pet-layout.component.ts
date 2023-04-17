@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { HatService } from 'src/app/Services/hat.service';
 
 @Component({
   selector: 'app-pet-layout',
@@ -17,13 +19,18 @@ export class PetLayoutComponent implements OnInit {
   petSpecies: string ='';
   foodNum: number = 0;
   money: number = 0;
+  currentHat: number = -1;
+  hatImg:string='';
 
-  constructor(private auth : AuthService, private pet: PetService, private http:HttpClient, private db:AngularFireDatabase) {
+  constructor(private auth : AuthService, private pet: PetService, private http:HttpClient, private db:AngularFireDatabase, private router:Router, private hat:HatService) {
   }
   async ngOnInit(): Promise<void> {
     let petNum:number;
     this.pet.getPetName().subscribe(data => {
       this.petName = <string>data;
+      if(this.petName == '...'){
+        this.router.navigate(['/petCreator'])
+      }
     })
     this.pet.getPetNum().subscribe(data =>{
       petNum = parseInt(data);
@@ -37,13 +44,19 @@ export class PetLayoutComponent implements OnInit {
     this.http.get("https://wvpets-71a12-default-rtdb.firebaseio.com/users/" +localStorage.getItem('uid')+ "/money.json").pipe(map(response => response as number)).subscribe(data =>{
       this.money = <number>data;
     });
+    this.http.get("https://wvpets-71a12-default-rtdb.firebaseio.com/users/" +localStorage.getItem('uid')+ "/currentHat.json").pipe(map(response => response as number)).subscribe(data =>{
+      this.currentHat = <number>data;
+      this.hatImg = this.hat.getHatImg(this.currentHat);
+      if(this.hatImg == ''){
+        window.location.reload();
+      }
+    });
   }
 
   logout(){
     this.auth.logout();
   }
   feed(){
-    this.http.put("https://wvpets-71a12-default-rtdb.firebaseio.com/users/JHQwPBu9ynPBLomoymhW3A56I3a2/petName.json", JSON.stringify("DOOKIE SPLIFF"));
-    console.log(JSON.stringify("dokie dokie")) // this doesnt work wtf
+    alert("You hand fed " +this.petName+". They loved it.")
   }
 }
