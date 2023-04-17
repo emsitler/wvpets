@@ -3,7 +3,7 @@ export const mock_shop_list= [
         id:"0",
         img: "https://png.pngtree.com/png-vector/20220706/ourmid/pngtree-brown-cowboy-hat-pixel-art-design-vector-png-image_5687029.png",
         name: "Cowboy Hat",
-        description: "Down on the range.",
+        description: "Horns down.",
     },
     {
         id:"1",
@@ -21,13 +21,13 @@ export const mock_shop_list= [
         id:"3",
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/535dcb070108467.png",
         name: "Bucket Hat",
-        description: "The NFT staple.",
+        description: "2016 staple.",
     },
     {
         id:"4",
         img: "http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/49b9c75100963ef.png",
-        name: "Pirate Hat",
-        description:"Yarr, me hearties!",
+        name: "Chef Hat",
+        description:"Rat not included.",
     },
     {
         id:"5",
