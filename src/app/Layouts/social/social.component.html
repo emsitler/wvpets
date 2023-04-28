@@ -1,10 +1,24 @@
 <div class="body">
     <h2 class="text-center text-black">Today's Feed</h2>
-    <div class="container p-3 bg-light text-dark border" style="width: 75%; margin-bottom: 10px; height: 100px">
-        new post document goes here...
+    <div class="container p-3 bg-light text-dark border" style="width: 75%; margin-bottom: 10px;">
+        <h5>add a new post here...</h5>
+        <form #postform="ngForm"(ngSubmit)="addItem(postform.value)">
+            <div class="input-group">
+                <span class="input-group-text">Title</span>
+                <input type="text" class="form-control" ngModel name="title">
+            </div> 
+            <div class="input-group">
+                <span class="input-group-text">Post Body</span>
+                <input type="text" class="form-control" ngModel name="body">
+            </div> 
+            <button class="btn btn-success input-group" type="sub">
+                Submit post
+            </button>
+        </form>
     </div>
-    <app-post-ui></app-post-ui>
-    <app-post-ui></app-post-ui>
-    <app-post-ui></app-post-ui>
-    <app-post-ui></app-post-ui>
+    <div *ngFor="let item of posts">
+        <div class="col" style="width:200px mx-5">
+            <app-post-ui title={{item.title}} body={{item.body}} user={{item.user}} currentHat={{item.currentHat}} petNum={{item.petNum}} time={{item.time}}></app-post-ui>
+        </div>
+    </div>
 </div>

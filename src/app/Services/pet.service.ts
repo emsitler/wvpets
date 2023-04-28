@@ -40,6 +40,8 @@ export class PetService{
           return "https://i.imgur.com/lXV9rDl.png"; //cardinal
         case 3:
           return "https://i.imgur.com/HXw7BJr.png"; //trout
+        case 4:
+          return "https://cdn.discordapp.com/attachments/777963501255393311/1097591407755137145/n7m6oh4erix71.webp"; //bingus
         default:
           console.log("Invalid pet type value");
           return "https://www.angrybirds.com/wp-content/uploads/2022/05/optimized-ABCOM_202203_1000x1000_CharacterDimensio_Red_journey.png";
@@ -56,6 +58,8 @@ export class PetService{
             return "Cardinal";
           case 3:
             return "Trout";
+          case 4:
+            return "Cat";
           default:
             return "Error";
         }
