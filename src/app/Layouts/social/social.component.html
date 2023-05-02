@@ -16,7 +16,7 @@
             </button>
         </form>
     </div>
-    <div *ngFor="let item of posts">
+    <div *ngFor="let item of posts.reverse()">
         <div class="col" style="width:200px mx-5">
             <app-post-ui title={{item.title}} body={{item.body}} user={{item.user}} currentHat={{item.currentHat}} petNum={{item.petNum}} time={{item.time}}></app-post-ui>
         </div>

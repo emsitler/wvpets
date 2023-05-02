@@ -14,6 +14,7 @@ export class LoginPageComponent {
   constructor(private auth : AuthService){}
 
   ngOnInit(): void {
+    localStorage.clear;
   }
 
   login(){

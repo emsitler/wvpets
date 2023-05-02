@@ -12,7 +12,7 @@
         <header class="text-white">Your pet:</header>
         <h1 class="text-white">{{petName}} the {{petSpecies}}</h1>
         <div class="container" style="height:50px"></div>
-        <img *ngIf="currentHat !== -1" src={{hatImg}} style="height:100px">
+        <img *ngIf="currentHat !== -1" class="hatImg" src={{hatImg}}>
         <img class ="petimage" src={{petImg}} alt="loading...">
         <div class="container" style="height: 20px"></div>
         <button type="button" class="btn btn-success" (click)="feed()">Feed</button>

@@ -50,6 +50,11 @@ export class PetCreatorComponent {
         alert('Please input a value for both fields.');
         return;
       }
+      if (this.petName.length > 16) {
+        alert('PetName is too long!');
+        return;
+      }
+
       this.db.object("users/" + localStorage.getItem('uid') + "/petName").set(this.petName);
       this.db.object("users/" + localStorage.getItem('uid') + "/petType").set(this.petType);
       this.db.object("users/" + localStorage.getItem('uid') + "/currentHat").set(-1);

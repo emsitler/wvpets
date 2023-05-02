@@ -30,7 +30,6 @@ export class ShopCardComponent {
     })
   }
   hatUnlockCheck(){
-    console.log("hatceck: " +this.hat)
     return this.hat;
   }
   unlockHat(){
