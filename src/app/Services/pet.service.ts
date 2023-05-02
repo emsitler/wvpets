@@ -35,7 +35,7 @@ export class PetService{
         case 0:
           return "https://i.imgur.com/WGV88f4.png"; //bear
         case 1:
-          return "https://i.imgur.com/CSa1miy.png"; //raccoon
+          return "https://i.imgur.com/zkcaI52.png"; //raccoon
         case 2:
           return "https://i.imgur.com/lXV9rDl.png"; //cardinal
         case 3:

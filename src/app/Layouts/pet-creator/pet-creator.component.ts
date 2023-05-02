@@ -31,7 +31,7 @@ export class PetCreatorComponent {
         this.previewImg = "https://i.imgur.com/WGV88f4.png"
         this.tempPetSpecies="Bear";
       }else if(this.petType == 1){
-        this.previewImg = "https://i.imgur.com/CSa1miy.png";
+        this.previewImg = "https://i.imgur.com/zkcaI52.png";
         this.tempPetSpecies="Raccoon";
       }else if(this.petType == 2){
         this.previewImg = "https://i.imgur.com/lXV9rDl.png";
